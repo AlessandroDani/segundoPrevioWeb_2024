@@ -1,5 +1,6 @@
 package com.ufps.test.entities;
 
+import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
 
@@ -20,7 +21,7 @@ import lombok.Data;
 @Entity
 @Data
 @Table(name = "manga")
-public class Manga {
+public class Manga implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;

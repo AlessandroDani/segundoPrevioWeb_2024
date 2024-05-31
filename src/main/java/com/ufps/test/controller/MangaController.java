@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.ufps.test.services.MangaServices;
@@ -23,5 +24,10 @@ public class MangaController {
 	@GetMapping("/mangas")
 	public List<Manga> getMangas(){
 		return mangaServices.getMangas();
+	}
+	
+	@GetMapping("/mangas/{id}")
+	public Manga getMangas(@PathVariable Integer id){
+		return mangaServices.getMangaId(id);
 	}
 }

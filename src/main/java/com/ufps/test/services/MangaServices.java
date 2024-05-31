@@ -11,10 +11,15 @@ import com.ufps.test.repositories.MangaRepository;
 @Service
 public class MangaServices {
 	
-	
+	@Autowired
+	MangaRepository mangaRepository;
 	
 	public List<Manga> getMangas() {
-		return null;
+		return mangaRepository.findAll();
+	}
+	
+	public Manga getMangaId(Integer id) {
+		return mangaRepository.getById(id);
 	}
 
 }
